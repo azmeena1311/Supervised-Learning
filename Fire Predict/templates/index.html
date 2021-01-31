@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Logo
+  </div>
+  <div class="w3-display-middle">
+   <form action="{{ url_for('predict') }}" method="post">
+          
+                <input class="form-input" type="text" name="oxygen" placeholder="oxygen"><br>
+                
+                <input class="form-input" type="text" name="temperature" placeholder="temperature"><br>
+                <input class="form-input" type="text" name="humidity" placeholder="humidity"><br>
+
+         
+          <input type="submit" class="my-cta-button" value="Predict">
+        </form>
+      <div>
+       <center>
+              <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+  </div>
+</div>
+
+</body>
+</html>
